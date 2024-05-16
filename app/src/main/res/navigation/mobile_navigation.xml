@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_tarefa">
+
+    <fragment
+        android:id="@+id/nav_tarefa"
+        android:name="intro.android.projetocm.ui.tarefa.TarefaFragment"
+        android:label="@string/menu_tarefa"
+        tools:layout="@layout/fragment_tarefa" />
+
+    <fragment
+        android:id="@+id/nav_projetos"
+        android:name="intro.android.projetocm.ui.projetos.ProjetosFragment"
+        android:label="@string/menu_projetos"
+        tools:layout="@layout/fragment_projetos" />
+
+    <fragment
+        android:id="@+id/nav_gestores"
+        android:name="intro.android.projetocm.ui.gestores.GestoresFragment"
+        android:label="@string/menu_gestores"
+        tools:layout="@layout/fragment_gestores" />
+</navigation>
