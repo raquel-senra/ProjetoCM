@@ -22,4 +22,10 @@
         android:name="intro.android.projetocm.ui.gestores.GestoresFragment"
         android:label="@string/menu_gestores"
         tools:layout="@layout/fragment_gestores" />
+
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="intro.android.projetocm.ui.login.LoginFragment"
+        android:label="@string/menu_login"
+        tools:layout="@layout/fragment_login" />
 </navigation>
