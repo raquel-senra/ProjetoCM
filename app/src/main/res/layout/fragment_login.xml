@@ -11,9 +11,9 @@
         android:id="@+id/logo"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:src="@drawable/Logo"
-        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/image"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
@@ -53,6 +53,20 @@
         app:layout_constraintTop_toBottomOf="@id/password"
         />
 
-
+    <TextView
+        android:id="@+id/txt_registo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/login_registo"
+        android:textColor="@color/green"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerComponents"
+        android:layout_marginBottom="30dp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

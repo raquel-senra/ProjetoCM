@@ -12,6 +12,7 @@
     <string name="menu_gestores">Gestores</string>
     <string name="menu_login">Login</string>
     <string name="login_iniciar">Iniciar Sessão</string>
+    <string name="login_registo">Se não tem conta, clique aqui</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
