@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import intro.android.projetocm.R
 import intro.android.projetocm.databinding.FragmentLoginBinding
 
@@ -21,6 +22,8 @@ class LoginFragment : Fragment() {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         val root: View = binding.root
         return root
-
     }
+
+
+
 }
