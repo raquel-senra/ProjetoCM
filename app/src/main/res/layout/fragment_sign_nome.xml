@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray" >
+
+
+    <View
+        android:id="@+id/containerComponents"
+        style="@style/ContainerComponents"
+        android:layout_width="371dp"
+        android:layout_height="99dp"
+        android:layout_marginTop="424dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/texto" />
+
+    <EditText
+        android:id="@+id/nome"
+        style="@style/Edit_Text"
+        android:hint="Nome do utilizador"
+        android:textStyle="bold"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@id/containerComponents"
+        app:layout_constraintEnd_toEndOf="@id/containerComponents"
+        app:layout_constraintTop_toTopOf="@id/containerComponents"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_seguinte"
+        style="@style/button"
+        android:layout_width="341dp"
+        android:layout_height="78dp"
+        android:text="@string/registar"
+        app:layout_constraintEnd_toEndOf="@id/containerComponents"
+        app:layout_constraintStart_toStartOf="@id/containerComponents"
+        app:layout_constraintTop_toBottomOf="@id/containerComponents" />
+
+    <TextView
+        android:id="@+id/texto"
+        android:layout_width="319dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="36dp"
+        android:gravity="center"
+        android:text="Escolha um nome de utilizador"
+        android:textColor="@color/green"
+        android:textSize="30sp"
+        android:fontFamily="sans-serif-black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

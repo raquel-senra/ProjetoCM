@@ -26,28 +26,28 @@
         app:layout_constraintTop_toTopOf="@id/containerUser"
         app:layout_constraintBottom_toBottomOf="@id/containerUser"/>
 
-    <ImageView
-        android:id="@+id/iconeUser"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/ic_user"
-        app:layout_constraintTop_toBottomOf="@id/containerUser"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"/>
-    
     <TextView
         android:id="@+id/text_nomeUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="52dp"
         android:text="user"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/containerUser"
         app:layout_constraintStart_toEndOf="@id/iconeUser"
+        app:layout_constraintTop_toBottomOf="@id/containerUser" />
+
+    <ImageView
+        android:id="@+id/iconeUser"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
-        android:layout_marginLeft="20dp"/>
+        android:src="@drawable/ic_user"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/containerUser" />
 
     <ImageView
         android:id="@+id/iconeEmail"
