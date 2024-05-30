@@ -6,13 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.google.firebase.auth.FirebaseAuth
 import intro.android.projetocm.R
 import intro.android.projetocm.databinding.FragmentLoginBinding
 
 
 class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
-
 
     override fun onCreateView(
         inflater: LayoutInflater,

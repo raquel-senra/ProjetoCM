@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "8539908778",
+    "project_id": "projetocm-fd8e2",
+    "storage_bucket": "projetocm-fd8e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8539908778:android:58ee80601c5bb5aa8e3ed3",
+        "android_client_info": {
+          "package_name": "intro.android.projetocm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCOEL6fImn5JuMGUECo9_G6OPoxFw8OI0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
