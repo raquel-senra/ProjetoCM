@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import intro.android.projetocm.databinding.FragmentProjetosBinding
-import intro.android.projetocm.databinding.FragmentTarefaBinding
 
 class ProjetosFragment : Fragment() {
 

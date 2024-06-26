@@ -23,9 +23,9 @@
         android:label="@string/menu_gestores"
         tools:layout="@layout/fragment_gestores" />
 
-    <fragment
+    <activity
         android:id="@+id/nav_login"
-        android:name="intro.android.projetocm.ui.login.LoginFragment"
+        android:name="intro.android.projetocm.ui.LoginActivity"
         android:label="@string/menu_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/activity_login" />
 </navigation>
