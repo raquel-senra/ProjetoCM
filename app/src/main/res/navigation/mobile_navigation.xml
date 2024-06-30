@@ -23,9 +23,27 @@
         android:label="@string/menu_gestores"
         tools:layout="@layout/fragment_gestores" />
 
-    <activity
+    <fragment
         android:id="@+id/nav_login"
-        android:name="intro.android.projetocm.ui.LoginActivity"
+        android:name="intro.android.projetocm.ui.login.LoginFragment"
         android:label="@string/menu_login"
-        tools:layout="@layout/activity_login" />
+        tools:layout="@layout/activity_login" >
+        <action
+            android:id="@+id/action_nav_login_to_nav_tarefa"
+            app:destination="@id/nav_tarefa" />
+        <action
+            android:id="@+id/action_nav_login_to_nav_registo"
+            app:destination="@id/nav_registo" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_registo"
+        android:name="intro.android.projetocm.ui.registo.RegistoFragment"
+        tools:layout="@layout/fragment_registo" >
+        <action
+            android:id="@+id/action_nav_registo_to_nav_tarefa"
+            app:destination="@id/nav_tarefa" />
+    </fragment>
+
+
 </navigation>
