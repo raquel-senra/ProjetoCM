@@ -60,6 +60,14 @@ class LoginFragment : Fragment() {
         }
     }
 
+    public override fun onStart() {
+        super.onStart()
+
+        if (auth.currentUser != null){
+            navController.navigate(R.id.action_nav_login_to_perfilFragment)
+        }
+    }
+
     private fun loginUser(email: String, pass: String) {
         auth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
             if (it.isSuccessful)

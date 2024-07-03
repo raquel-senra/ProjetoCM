@@ -73,6 +73,7 @@
         android:layout_marginLeft="20dp"/>
     
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_logout"
         style="@style/button"
         android:text="@string/logout"
         android:layout_margin="50dp"
