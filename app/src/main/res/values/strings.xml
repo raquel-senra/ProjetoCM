@@ -21,7 +21,11 @@
     <string name="logout">Logout</string>
     <string name="menu_logout">Logout</string>
     <string name="nova_tarefa">Nova Tarefa</string>
+    <string name="avaliacao">Avaliação</string>
+    <string name="projeto_nome">Projeto Teste</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="voltar_para_a_tela_anterior">Voltar para a tela anterior</string>
 </resources>

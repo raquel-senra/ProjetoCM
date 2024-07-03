@@ -18,17 +18,16 @@
         app:layout_constraintTop_toBottomOf="parent" />
 
     <TextView
-        android:id="@+id/texto2"
+        android:id="@+id/registo_tarefa"
         android:layout_width="313dp"
         android:layout_height="34dp"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="48dp"
         android:fontFamily="sans-serif-black"
         android:text="Criar projeto"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.561"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

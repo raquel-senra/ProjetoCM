@@ -50,10 +50,33 @@
     </fragment>
 
     <fragment
-        android:id="@+id/nav_nova_tarefa"
+        android:id="@+id/nav_tarefa_concluida"
         android:name="intro.android.projetocm.ui.tarefa.NovaTarefaFragment"
         android:label="@string/nova_tarefa"
-        tools:layout="@layout/fragment_nova_tarefa" />
+        tools:layout="@layout/fragment_tarefa_concluida" />
 
+    <fragment
+        android:id="@+id/nav_observacoes"
+        android:name="intro.android.projetocm.nav_observacoes"
+        android:label="fragment_nav_observacoes"
+        tools:layout="@layout/fragment_observacoes" />
+
+    <fragment
+        android:id="@+id/nav_avaliacao"
+        android:name="intro.android.projetocm.fragment_avaliacao"
+        android:label="nav_avaliacao"
+        tools:layout="@layout/fragment_avaliacao" />
+
+    <fragment
+        android:id="@+id/nav_perfil"
+        android:name="intro.android.projetocm.nav_perfil"
+        android:label="fragment_n_perfil"
+        tools:layout="@layout/fragment_perfil" />
+
+    <fragment
+        android:id="@+id/nav_nova_tarefa"
+        android:name="intro.android.projetocm.nav_nova_tarefa"
+        android:label="fragment_nova_tarefa"
+        tools:layout="@layout/fragment_nova_tarefa" />
 
 </navigation>
