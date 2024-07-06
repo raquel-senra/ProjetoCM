@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import intro.android.projetocm.databinding.TarefaCardBinding
 
-class TarefaAdapter(private val list: MutableList<String>) : RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>(){
+class TarefaAdapter(private val list: MutableList<TarefaData>) : RecyclerView.Adapter<TarefaAdapter.TarefaViewHolder>(){
 
     inner class TarefaViewHolder(val binding: TarefaCardBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -21,7 +21,7 @@ class TarefaAdapter(private val list: MutableList<String>) : RecyclerView.Adapte
     override fun onBindViewHolder(holder: TarefaViewHolder, position: Int) {
         with(holder) {
             with(list[position]) {
-                binding.descricaoTarefa.text = list[position]
+                binding.descricaoTarefa.text = this.descricao
             }
         }
     }

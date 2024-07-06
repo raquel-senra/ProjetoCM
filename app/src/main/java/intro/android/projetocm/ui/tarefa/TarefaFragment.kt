@@ -17,6 +17,7 @@ import com.google.firebase.ktx.Firebase
 import intro.android.projetocm.R
 import intro.android.projetocm.databinding.FragmentTarefaBinding
 import intro.android.projetocm.utils.TarefaAdapter
+import intro.android.projetocm.utils.TarefaData
 
 
 class TarefaFragment : Fragment() {
@@ -52,13 +53,15 @@ class TarefaFragment : Fragment() {
                val email = auth.currentUser?.email
 
                if (email != null) {
+
                     db.collection("tarefas").whereEqualTo("email", email).get()
                          .addOnSuccessListener { documents ->
-                              val tarefas = mutableListOf<String>()
+                              val tarefas = mutableListOf<TarefaData>()
                               for (document in documents) {
+                                   val tarefaId = document.getString("tarefaId")
                                    val descricao = document.getString("descricao")
                                    if (descricao != null) {
-                                        tarefas.add(descricao)
+                                        tarefas.add(TarefaData(tarefaId.toString(), descricao))
                                    }
                               }
                               val adapter = TarefaAdapter(tarefas)
