@@ -9,12 +9,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import intro.android.projetocm.R
 import intro.android.projetocm.databinding.FragmentTarefaBinding
+import intro.android.projetocm.utils.TarefaAdapter
 
 
 class TarefaFragment : Fragment() {
@@ -52,10 +54,16 @@ class TarefaFragment : Fragment() {
                if (email != null) {
                     db.collection("tarefas").whereEqualTo("email", email).get()
                          .addOnSuccessListener { documents ->
+                              val tarefas = mutableListOf<String>()
                               for (document in documents) {
-                                   val nome = document.get("descricao") as String
-                                   binding.teste.text = nome.toString()
+                                   val descricao = document.getString("descricao")
+                                   if (descricao != null) {
+                                        tarefas.add(descricao)
+                                   }
                               }
+                              val adapter = TarefaAdapter(tarefas)
+                              binding.rvTarefas.adapter = adapter
+                              binding.rvTarefas.layoutManager = LinearLayoutManager(context)
                          }
                          .addOnFailureListener { exception ->
                               Log.w(TAG, "Error getting documents: ", exception)

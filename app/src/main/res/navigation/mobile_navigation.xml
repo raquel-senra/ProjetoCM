@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_nav_tarefa_to_nav_nova_tarefa"
             app:destination="@id/nav_nova_tarefa" />
+        <action
+            android:id="@+id/action_nav_tarefa_to_nav_login"
+            app:destination="@id/nav_login" />
     </fragment>
 
     <fragment
