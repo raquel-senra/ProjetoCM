@@ -69,7 +69,7 @@ class RegistoFragment : Fragment() {
                     "nome" to binding.idNome.getText().toString().trim(),
                     "email" to binding.idEmail.getText().toString().trim())
 
-                db.collection("users").document(binding.idNome.getText().toString().trim()).set(userMap).addOnCompleteListener{
+                db.collection("users").document(binding.idEmail.getText().toString().trim()).set(userMap).addOnCompleteListener{
                     Log.d("db", "success")
                 }
 
@@ -81,6 +81,7 @@ class RegistoFragment : Fragment() {
 
         }
     }
+
     private fun init(view: View) {
         navController = Navigation.findNavController(view)
         auth = FirebaseAuth.getInstance()

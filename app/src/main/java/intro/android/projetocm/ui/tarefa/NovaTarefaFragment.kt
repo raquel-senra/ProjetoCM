@@ -1,60 +1,77 @@
 package intro.android.projetocm.ui.tarefa
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 import intro.android.projetocm.R
+import intro.android.projetocm.databinding.FragmentNovaTarefaBinding
+import intro.android.projetocm.databinding.FragmentRegistoBinding
+import java.util.UUID
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [NovaTarefaFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class NovaTarefaFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var navController: NavController
+    private lateinit var binding: FragmentNovaTarefaBinding
+    private lateinit var auth: FirebaseAuth
+    private val db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_nova_tarefa, container, false)
+        binding = FragmentNovaTarefaBinding.inflate(inflater, container, false)
+        val root: View = binding.root
+        return root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment NovaTarefaFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            NovaTarefaFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        init(view)
+
+        auth = Firebase.auth
+
+        binding.btnGuardar.setOnClickListener {
+            val idTarefa = UUID.randomUUID().toString()
+            val email = auth.currentUser?.email
+            val tarefaMap = hashMapOf(
+                "id" to idTarefa,
+                "email" to email,
+                "projeto" to binding.nomeProjeto.text.toString(),
+                "descricao" to binding.infoTarefa.text.toString()
+            )
+
+            if (email != null) {
+                db.collection("tarefas").document(idTarefa)
+                    .set(tarefaMap).addOnCompleteListener {
+                        Log.d("db", "Tarefa salva com sucesso!")
+
+                        navController.navigate(R.id.action_nav_nova_tarefa_to_nav_tarefa)
+                    }.addOnFailureListener {
+                    }
             }
+
+        }
+    }
+    private fun init(view: View) {
+        navController = Navigation.findNavController(view)
+        auth = FirebaseAuth.getInstance()
     }
 }

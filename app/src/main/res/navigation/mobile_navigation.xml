@@ -56,7 +56,11 @@
         android:id="@+id/nav_nova_tarefa"
         android:name="intro.android.projetocm.ui.tarefa.NovaTarefaFragment"
         android:label="@string/nova_tarefa"
-        tools:layout="@layout/fragment_nova_tarefa" />
+        tools:layout="@layout/fragment_nova_tarefa" >
+        <action
+            android:id="@+id/action_nav_nova_tarefa_to_nav_tarefa"
+            app:destination="@id/nav_tarefa" />
+    </fragment>
     <fragment
         android:id="@+id/perfilFragment"
         android:name="intro.android.projetocm.ui.perfil.PerfilFragment"
